@@ -1,20 +1,18 @@
-
-class Wizard(object):
+class Cooperation(object):
     """docstring for Wizard"""
     def __init__(self, name, level):
         self.name = name
         self.level = level
 
-class Creature(object):
-    """docstring for Creature"""
+class Nuisance(object):
+    """docstring for Nuisance"""
     def __init__(self, name, level):
         self.name = name
         self.level = level
-        class Creature(object):
+        class Nuisance(object):
 
-class SmallAnimal(Creature):
-    """docstring for SmallAnimal"""
+class SmallNuisance(Nuisance):
+    """docstring for SmallNuisance"""
     def __init__(self, arg):
-        super(SmallAnimal, self).__init__()
+        super(Nuisance, self).__init__()
         self.arg = arg
-
