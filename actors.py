@@ -1,18 +1,24 @@
-class Cooperation(object):
+
+
+
+
+class Hero(object):
     """docstring for Wizard"""
     def __init__(self, name, level):
         self.name = name
         self.level = level
 
-class Nuisance(object):
-    """docstring for Nuisance"""
+class Opponent(object):
+    """docstring for Opponent"""
     def __init__(self, name, level):
         self.name = name
         self.level = level
-        class Nuisance(object):
 
-class SmallNuisance(Nuisance):
-    """docstring for SmallNuisance"""
-    def __init__(self, arg):
-        super(Nuisance, self).__init__()
-        self.arg = arg
+    def __repr__(self):
+        return f"Digital Oppononent: {self.name} at Level {self.level}"
+
+# class SmallOpponent(Opponent):
+#     """docstring for SmallOpponent"""
+#     def __init__(self, arg):
+#         super(Opponent, self).__init__()
+#         self.arg = arg
