@@ -2,7 +2,7 @@ import random
 
 
 class Hero(object):
-    """docstring for Wizard"""
+    """docstring for Hero"""
     def __init__(self, name, level):
         self.name = name
         self.level = level
