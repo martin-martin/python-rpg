@@ -1,3 +1,4 @@
+import time
 import random
 from actors import Hero, Opponent
 
@@ -47,13 +48,31 @@ at Level {current_opponent.level} has appeared.\n")
             print("Please enter one of the three letters [a, r, l] to play")
             print("To exit game, type [q] for 'quit'.")
             cmd = input("Do you want to [a]ttack, [r]unaway, or [l]ook around? ")
+
         # do specific things depending on the user input
+
+        # ATTACK LOGIC
         if cmd == 'a':
-            print("Attacking!")
+            if hero.attack(current_opponent):
+                opponents.remove(current_opponent)
+            else:
+                print(f"{hero.name} caps their internet connection in despair...")
+                time.sleep(5)  # pause for 5 seconds
+                print(f"{hero.name} comes back online refreshed!\n")
+
+        # RUNAWAY LOGIC
         elif cmd == 'r':
-            print("You got away safely...")
+            print("You got away safely...\n")
+
+        # LOOKAROUND LOGIC
         elif cmd == 'l':
-            print("Checking out the surroundings...")
+            print(f"Hacking and checking out the surroundings... |Oh!| {hero.name} sees:")
+            for op in opponents:
+                print(f"* A {op.name} of Level {op.level}")
+                # print(f"a {op}")  # using the __repr__ function
+            print()
+
+        # QUITTERS QUIT HERE
         elif cmd == 'q':
             print("\nExiting LINK RPG. ByeBye...")
             break

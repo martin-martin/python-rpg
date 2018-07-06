@@ -1,5 +1,4 @@
-
-
+import random
 
 
 class Hero(object):
@@ -7,6 +6,23 @@ class Hero(object):
     def __init__(self, name, level):
         self.name = name
         self.level = level
+
+    def attack(self, opponent):
+        print(f"Our hero {self.name} attacks {opponent.name}!")
+
+        hero_roll = random.randint(1, 12) * self.level
+        opp_roll = random.randint(1, 12) * opponent.level
+
+        print(f"You roll {hero_roll}..."
+        print(f"The {opponent.name} rolls {opp_roll}...")
+
+        if hero_roll >= opp_roll:
+            print(f"{self.name} has remained victorious over {opponent.name}!\n")
+            return True
+        else:
+            print(f"DEFEAT! {opponent.name} has overpowered {self.name}!\n")
+            return False
+
 
 class Opponent(object):
     """docstring for Opponent"""
